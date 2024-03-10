@@ -9,14 +9,18 @@ const SCALE_TIME: float = 0.5
 func _ready():
 	run_me()
 	
+
 func set_rand_image() -> void:
 	texture = ImageManager.get_rand_item_image().item_texture
 	
+
 func get_rand_spin_time() -> float:
 	return randf_range(SPIN_TIME_RANGE.x, SPIN_TIME_RANGE.y)
 	
+
 func get_rand_rotation() -> float:
 	return deg_to_rad(randf_range(-360, 360))
+
 
 func run_me() -> void:
 	var tween = get_tree().create_tween()

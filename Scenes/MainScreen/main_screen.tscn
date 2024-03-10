@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c15ukq3puapyt"]
+[gd_scene load_steps=6 format=3 uid="uid://c15ukq3puapyt"]
 
 [ext_resource type="FontFile" uid="uid://cb8g0eqj1h1dw" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="1_nvhjx"]
+[ext_resource type="Script" path="res://Scenes/MainScreen/main_screen.gd" id="1_yq5jv"]
 [ext_resource type="PackedScene" uid="uid://0orbfa78j744" path="res://Scenes/FrontSprite/front_sprite.tscn" id="2_6jduf"]
+[ext_resource type="PackedScene" uid="uid://crmiik1vu0cm3" path="res://Scenes/LevelButton/level_button.tscn" id="2_vph8a"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_hba32"]
 font = ExtResource("1_nvhjx")
@@ -17,6 +19,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_yq5jv")
+level_button_scene = ExtResource("2_vph8a")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -53,6 +57,7 @@ size_flags_vertical = 3
 [node name="HBLevels" type="HBoxContainer" parent="VB"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_constants/separation = 8
 
 [node name="Spacer4" type="Control" parent="VB"]
 layout_mode = 2
