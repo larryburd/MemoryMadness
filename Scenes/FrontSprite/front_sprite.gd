@@ -24,9 +24,11 @@ func get_rand_rotation() -> float:
 
 func run_me() -> void:
 	var tween = get_tree().create_tween()
-	tween.set_loops() # Sets to infinate with no param
+	
+	# Infinitely loop through selecting an image, rotation, and spin time
 	tween.tween_callback(set_rand_image)
 	tween.tween_property(self, "scale", SCALE_NORMAL, SCALE_TIME)
 	tween.tween_property(self, "rotation", get_rand_rotation(), get_rand_spin_time())
 	tween.tween_property(self, "rotation", get_rand_rotation(), get_rand_spin_time())
 	tween.tween_property(self, "scale", SCALE_SMALL, SCALE_TIME)
+	tween.tween_callback(run_me)
